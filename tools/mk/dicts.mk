@@ -358,21 +358,10 @@ $(MAKEDICT_BUILD_DIR)/$(STARDICT_DICT_NAME).dict.dz \
 	# compress .dict file and drop original file
 	cd $(MAKEDICT_BUILD_DIR) && dictzip $(STARDICT_DICT_NAME).dict
 
-# ToDo
-stardict-$(dictname)-README:
-	@echo "Generating $@..."
-	@echo "StarDict's dict ifo file" > $@
-	@echo "version=2.4.2" >> $@
-	@echo "wordcount=$(wordcount)" >> $@
-	@echo "idxfilesize=$(idxfilesize)" >> $@
-	@echo "bookname=$(shell cat title.out)" >> $@
-	@echo "author=$(shell sed -e "s/ <.*>//" <authorresp.out)" >> $@
-	@echo "email=$(shell sed -e "s/.* <\(.*\)>/\1/" <authorresp.out)" >> $@
-	@echo "website=$(shell cat sourceurl.out)" >> $@
-	@echo "description=Converted to StarDict format by freedict.org" >> $@
-	@echo "date=$(shell date +%G.%m.%d)" >> $@
-	@echo "sametypesequence=m" >> $@
-	@cat $@
+# create README to explain to the user what to do with this file
+$(STARDICT_BASE)/README-format.md:
+	@echo "Adding README-format.md"
+	cp $(FREEDICTDIR)/tools/Makefile.include/README.stardict $@
 
 stardict: $(MAKEDICT_BUILD_DIR)/$(STARDICT_DICT_NAME).dict.dz \
 	$(MAKEDICT_BUILD_DIR)/$(STARDICT_DICT_NAME).idx \
@@ -389,11 +378,11 @@ $(BUILD_DIR)/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2: \
 	  $(addprefix $(notdir $(realpath .))/, $^)
 STRDCT_RELEASE_DIR=$(FREEDICTDIR)/release/stardict
 $(FREEDICTDIR)/release/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2: \
-       	stardict
+       	stardict $(STARDICT_BASE)/README-format.md
 	@if [ ! -d $(STRDCT_RELEASE_DIR) ]; then \
 		mkdir $(STRDCT_RELEASE_DIR); fi
 	cd $(STARDICT_BASE) && tar cvjf freedict-$(dictname)-$(version)-stardict.tar.bz2 \
-	  $(STARDICT_DICT_NAME)
+	  $(STARDICT_DICT_NAME) README-format.md
 	mv $(STARDICT_BASE)/freedict-$(dictname)-$(version)-stardict.tar.bz2 \
 		$(STRDCT_RELEASE_DIR)
 
@@ -401,19 +390,9 @@ release-stardict: \
 	$(BUILD_DIR)/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2
 
 
-authorresp.out: $(dictname).tei $(xsldir)/getauthor.xsl
-	$(XSLTPROCESSOR) $(xsldir)/getauthor.xsl $< >$@
-
-title.out: $(dictname).tei $(xsldir)/gettitle.xsl
-	$(XSLTPROCESSOR) $(xsldir)/gettitle.xsl $< >$@
-
-sourceurl.out: $(dictname).tei $(xsldir)/getsourceurl.xsl
-	$(XSLTPROCESSOR) $(xsldir)/getsourceurl.xsl $< >$@
-
 clean::
 	rm -f $(dictname).idxhead \
-	$(BUILD_DIR)/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2 \
-	dictd2dic.out authorresp.out title.out sourceurl.out
+		$(BUILD_DIR)/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2
 	rm -rf $(STARDICT_BASE)
 
 #####################
