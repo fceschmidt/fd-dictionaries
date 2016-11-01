@@ -45,29 +45,26 @@ all: $(dictname).dict.dz $(dictname).index
 # the above targets; please drop us a line at freedict-beta.
 
 release: #! build all available release archives at release/
-release: release-src release-dict-tbz2
+release: release-src release-dict-tbz2 release-stardict
 
+###################################################
+#### create directories where release files are put
+###################################################
 
-find-homographs: $(dictname).tei
-	@cat $< | grep orth | \
-	sed -e s:'          <orth>':'':g -e s:'<\/orth>':'':g | sort -f | \
-	uniq -i -d
+dirs:
+	@if [ ! -d $(FREEDICTDIR)/release/dict-tgz ]; then \
+		mkdir $(FREEDICTDIR)/release/dict-tgz; fi
+	@if [ ! -d $(FREEDICTDIR)/release/dict-tbz2 ]; then \
+		mkdir $(FREEDICTDIR)/release/dict-tbz2; fi
 
-# prints what was used as Part-Of-Speech <pos> element content
-# with a number stating how often it was used
-pos-statistics: $(dictname).tei
-	grep -o "<pos>.*</pos>" $< | perl -pi -e 's/<pos>(.*)<\/pos>/$$1/;' | sort | uniq -c
+%.dz: %
+	dictzip -k $<
 
-###############################################################################
-#### create directories where release files are stored
-###############################################################################
+%.tar.gz: %.dict.dz %.index
+	tar czf $*.tar.gz $*.dict.dz $*.index
 
-dirs: #! creates all directories for releasing files
-	@if [ ! -d "$(BUILD_DIR)/dict-tgz" ]; then \
-		mkdir -p "$(BUILD_DIR)/dict-tgz"; fi
-	@if [ ! -d "$(BUILD_DIR)/dict-tbz2" ]; then \
-		mkdir "$(BUILD_DIR)/dict-tbz2"; fi
-
+%.tar.bz2: %.dict.dz %.index
+	tar cjf $*.tar.bz2 $*.dict.dz $*.index
 
 ######################################################################
 #### targets for c5/dictfmt conversion style into dict database format
