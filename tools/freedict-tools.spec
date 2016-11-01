@@ -32,7 +32,7 @@ echo "This rpm is experimental! Use at your own risk and report bugs"
 echo "to freedict-beta@lists.sourceforge.net!"
 
 %install
-make -f Makefile.tools install DESTDIR=$RPM_BUILD_ROOT PREFIX=usr
+make -f Makefile.include/Makefile.tools install DESTDIR=$RPM_BUILD_ROOT PREFIX=usr
 
 %post
 
