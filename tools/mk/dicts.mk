@@ -331,7 +331,7 @@ clean::
 
 # This tool comes with stardict
 MAKEDICT ?= makedict
-STARDICT_BASE=stardict
+STARDICT_BASE=build
 MAKEDICT_BUILD_DIR = $(STARDICT_BASE)/freedict-$(dictname)
 STARDICT_DICT_NAME = freedict-$(dictname)
 
@@ -342,7 +342,10 @@ $(MAKEDICT_BUILD_DIR)/$(STARDICT_DICT_NAME).dict.dz \
 		$(MAKEDICT_BUILD_DIR)/$(STARDICT_DICT_NAME).idx \
 		$(MAKEDICT_BUILD_DIR)/$(STARDICT_DICT_NAME).ifo: \
 			$(dictname).index $(dictname).dict
-	mkdir -p $(STARDICT_BASE)
+	if [ -d "$(STARDICT_BASE)" ]; then \
+		rm -rf "$(STARDICT_BASE)"; \
+	fi
+	mkdir -p "$(STARDICT_BASE)"; \
 	# copy files for stardict build, rename them to get a prefix for the output
 	# files
 	cp $(dictname).dict $(STARDICT_BASE)/$(STARDICT_DICT_NAME).dict
@@ -408,10 +411,10 @@ sourceurl.out: $(dictname).tei $(xsldir)/getsourceurl.xsl
 	$(XSLTPROCESSOR) $(xsldir)/getsourceurl.xsl $< >$@
 
 clean::
-	rm -f $(dictname).idxhead $(stardict_prefix)$(dictname).idx.gz \
-	$(stardict_prefix)$(dictname).dict.dz $(stardict_prefix)$(dictname).ifo \
+	rm -f $(dictname).idxhead \
 	$(BUILD_DIR)/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2 \
 	dictd2dic.out authorresp.out title.out sourceurl.out
+	rm -rf $(STARDICT_BASE)
 
 #####################
 #### targets for ding
