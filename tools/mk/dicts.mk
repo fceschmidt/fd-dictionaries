@@ -330,38 +330,33 @@ clean::
 ##################################
 
 # This tool comes with stardict
-DICTD2DIC ?= dictd2dic
+MAKEDICT ?= makedict
+STARDICT_BASE=stardict
+MAKEDICT_BUILD_DIR = $(STARDICT_BASE)/freedict-$(dictname)
+STARDICT_DICT_NAME = freedict-$(dictname)
 
-# This is hardcoded into dictd2dic :(
-stardict_prefix = dictd_www.dict.org_
+# makedict drops the stardict files into a subdirectory, but that's actually
+# quite handy, because it prevents a mess in the dictionary directory of
+# stardict; the prefix for those directory names is `freedict-`
+$(MAKEDICT_BUILD_DIR)/$(STARDICT_DICT_NAME).dict.dz \
+		$(MAKEDICT_BUILD_DIR)/$(STARDICT_DICT_NAME).idx \
+		$(MAKEDICT_BUILD_DIR)/$(STARDICT_DICT_NAME).ifo: \
+			$(dictname).index $(dictname).dict
+	mkdir -p $(STARDICT_BASE)
+	# copy files for stardict build, rename them to get a prefix for the output
+	# files
+	cp $(dictname).dict $(STARDICT_BASE)/$(STARDICT_DICT_NAME).dict
+	cp $(dictname).index $(STARDICT_BASE)/$(STARDICT_DICT_NAME).index
+	cd $(STARDICT_BASE) && $(MAKEDICT) -i dictd -o stardict $(STARDICT_DICT_NAME).index
+	# drop version suffix (rename from stardict-freedict-$(dictname)-version)
+	cd $(STARDICT_BASE) && mv stardict-$(STARDICT_DICT_NAME)* $(STARDICT_DICT_NAME)/
+	# remove temporary dictd format copies
+	rm $(STARDICT_BASE)/$(STARDICT_DICT_NAME).dict $(STARDICT_BASE)/$(STARDICT_DICT_NAME).index
+	# compress .dict file and drop original file
+	cd $(MAKEDICT_BUILD_DIR) && dictzip $(STARDICT_DICT_NAME).dict
 
-# idxhead is required to preexist by dictd2dic. The reason is not documented.
-$(dictname).idxhead:
-	echo -n "" > $@
-
-$(stardict_prefix)$(dictname).idx $(stardict_prefix)$(dictname).dict.dz \
-	dictd2dic.out: $(dictname).index $(dictname).dict $(dictname).idxhead
-	$(DICTD2DIC) $(dictname) >dictd2dic.out
-	gzip -9 $(stardict_prefix)$(dictname).idx
-
-# $(wordcount) and $(idxfilesize) are a target-specific variables
-$(stardict_prefix)$(dictname).ifo: \
-	wordcount=$(word 2, $(shell tail -n1 dictd2dic.out))
-
-$(stardict_prefix)$(dictname).ifo: \
-	idxfilesize=$(strip $(shell zcat $(stardict_prefix)$(dictname).idx | wc -c))
-
-authorresp.out: $(dictname).tei $(xsldir)/getauthor.xsl
-	$(XSLTPROCESSOR) $(xsldir)/getauthor.xsl $< >$@
-
-title.out: $(dictname).tei $(xsldir)/gettitle.xsl
-	$(XSLTPROCESSOR) $(xsldir)/gettitle.xsl $< >$@
-
-sourceurl.out: $(dictname).tei $(xsldir)/getsourceurl.xsl
-	$(XSLTPROCESSOR) $(xsldir)/getsourceurl.xsl $< >$@
-
-$(stardict_prefix)$(dictname).ifo: $(stardict_prefix)$(dictname).idx \
-	dictd2dic.out authorresp.out title.out sourceurl.out
+# ToDo
+stardict-$(dictname)-README:
 	@echo "Generating $@..."
 	@echo "StarDict's dict ifo file" > $@
 	@echo "version=2.4.2" >> $@
@@ -376,7 +371,9 @@ $(stardict_prefix)$(dictname).ifo: $(stardict_prefix)$(dictname).idx \
 	@echo "sametypesequence=m" >> $@
 	@cat $@
 
-stardict: $(stardict_prefix)$(dictname).ifo
+stardict: $(MAKEDICT_BUILD_DIR)/$(STARDICT_DICT_NAME).dict.dz \
+	$(MAKEDICT_BUILD_DIR)/$(STARDICT_DICT_NAME).idx \
+	$(MAKEDICT_BUILD_DIR)/$(STARDICT_DICT_NAME).ifo
 
 $(BUILD_DIR)/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2: \
        	$(stardict_prefix)$(dictname).ifo \
@@ -387,9 +384,28 @@ $(BUILD_DIR)/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2: \
 	tar -C .. -cvjf \
 	  $(BUILD_DIR)/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2 \
 	  $(addprefix $(notdir $(realpath .))/, $^)
+STRDCT_RELEASE_DIR=$(FREEDICTDIR)/release/stardict
+$(FREEDICTDIR)/release/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2: \
+       	stardict
+	@if [ ! -d $(STRDCT_RELEASE_DIR) ]; then \
+		mkdir $(STRDCT_RELEASE_DIR); fi
+	cd $(STARDICT_BASE) && tar cvjf freedict-$(dictname)-$(version)-stardict.tar.bz2 \
+	  $(STARDICT_DICT_NAME)
+	mv $(STARDICT_BASE)/freedict-$(dictname)-$(version)-stardict.tar.bz2 \
+		$(STRDCT_RELEASE_DIR)
 
 release-stardict: \
 	$(BUILD_DIR)/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2
+
+
+authorresp.out: $(dictname).tei $(xsldir)/getauthor.xsl
+	$(XSLTPROCESSOR) $(xsldir)/getauthor.xsl $< >$@
+
+title.out: $(dictname).tei $(xsldir)/gettitle.xsl
+	$(XSLTPROCESSOR) $(xsldir)/gettitle.xsl $< >$@
+
+sourceurl.out: $(dictname).tei $(xsldir)/getsourceurl.xsl
+	$(XSLTPROCESSOR) $(xsldir)/getsourceurl.xsl $< >$@
 
 clean::
 	rm -f $(dictname).idxhead $(stardict_prefix)$(dictname).idx.gz \
