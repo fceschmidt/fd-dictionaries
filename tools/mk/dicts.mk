@@ -4,6 +4,7 @@
 # used for making a release in FreeDict. "install" and "uninstall" targets are
 # provided, too.
 include $(FREEDICT_TOOLS)/mk/config.mk
+include $(FREEDICT_TOOLS)/mk/stardict.mk
 
 #######################
 #### set some variables
@@ -45,26 +46,29 @@ all: $(dictname).dict.dz $(dictname).index
 # the above targets; please drop us a line at freedict-beta.
 
 release: #! build all available release archives at release/
-release: release-src release-dict-tbz2 release-stardict
+release: release-src release-dict-tbz2
 
-###################################################
-#### create directories where release files are put
-###################################################
 
-dirs:
-	@if [ ! -d $(FREEDICTDIR)/release/dict-tgz ]; then \
-		mkdir $(FREEDICTDIR)/release/dict-tgz; fi
-	@if [ ! -d $(FREEDICTDIR)/release/dict-tbz2 ]; then \
-		mkdir $(FREEDICTDIR)/release/dict-tbz2; fi
+find-homographs: $(dictname).tei
+	@cat $< | grep orth | \
+	sed -e s:'          <orth>':'':g -e s:'<\/orth>':'':g | sort -f | \
+	uniq -i -d
 
-%.dz: %
-	dictzip -k $<
+# prints what was used as Part-Of-Speech <pos> element content
+# with a number stating how often it was used
+pos-statistics: $(dictname).tei
+	grep -o "<pos>.*</pos>" $< | perl -pi -e 's/<pos>(.*)<\/pos>/$$1/;' | sort | uniq -c
 
-%.tar.gz: %.dict.dz %.index
-	tar czf $*.tar.gz $*.dict.dz $*.index
+###############################################################################
+#### create directories where release files are stored
+###############################################################################
 
-%.tar.bz2: %.dict.dz %.index
-	tar cjf $*.tar.bz2 $*.dict.dz $*.index
+dirs: #! creates all directories for releasing files
+	@if [ ! -d "$(BUILD_DIR)/dict-tgz" ]; then \
+		mkdir -p "$(BUILD_DIR)/dict-tgz"; fi
+	@if [ ! -d "$(BUILD_DIR)/dict-tbz2" ]; then \
+		mkdir "$(BUILD_DIR)/dict-tbz2"; fi
+
 
 ######################################################################
 #### targets for c5/dictfmt conversion style into dict database format
@@ -325,76 +329,6 @@ clean::
 	$(BUILD_DIR)/dic/freedict-$(dictname)-$(version).dic \
 	$(BUILD_DIR)/dic/freedict-$(dictname)-$(version).dic.dz
 
-##################################
-#### targets for StarDict platform
-##################################
-
-# This tool comes with stardict
-MAKEDICT ?= makedict
-STARDICT_BASE=build
-MAKEDICT_BUILD_DIR = $(STARDICT_BASE)/freedict-$(dictname)
-STARDICT_DICT_NAME = freedict-$(dictname)
-
-# makedict drops the stardict files into a subdirectory, but that's actually
-# quite handy, because it prevents a mess in the dictionary directory of
-# stardict; the prefix for those directory names is `freedict-`
-$(MAKEDICT_BUILD_DIR)/$(STARDICT_DICT_NAME).dict.dz \
-		$(MAKEDICT_BUILD_DIR)/$(STARDICT_DICT_NAME).idx \
-		$(MAKEDICT_BUILD_DIR)/$(STARDICT_DICT_NAME).ifo: \
-			$(dictname).index $(dictname).dict
-	if [ -d "$(STARDICT_BASE)" ]; then \
-		rm -rf "$(STARDICT_BASE)"; \
-	fi
-	mkdir -p "$(STARDICT_BASE)"; \
-	# copy files for stardict build, rename them to get a prefix for the output
-	# files
-	cp $(dictname).dict $(STARDICT_BASE)/$(STARDICT_DICT_NAME).dict
-	cp $(dictname).index $(STARDICT_BASE)/$(STARDICT_DICT_NAME).index
-	cd $(STARDICT_BASE) && $(MAKEDICT) -i dictd -o stardict $(STARDICT_DICT_NAME).index
-	# drop version suffix (rename from stardict-freedict-$(dictname)-version)
-	cd $(STARDICT_BASE) && mv stardict-$(STARDICT_DICT_NAME)* $(STARDICT_DICT_NAME)/
-	# remove temporary dictd format copies
-	rm $(STARDICT_BASE)/$(STARDICT_DICT_NAME).dict $(STARDICT_BASE)/$(STARDICT_DICT_NAME).index
-	# compress .dict file and drop original file
-	cd $(MAKEDICT_BUILD_DIR) && dictzip $(STARDICT_DICT_NAME).dict
-
-# create README to explain to the user what to do with this file
-$(STARDICT_BASE)/README-format.md:
-	@echo "Adding README-format.md"
-	cp $(FREEDICTDIR)/tools/Makefile.include/README.stardict $@
-
-stardict: $(MAKEDICT_BUILD_DIR)/$(STARDICT_DICT_NAME).dict.dz \
-	$(MAKEDICT_BUILD_DIR)/$(STARDICT_DICT_NAME).idx \
-	$(MAKEDICT_BUILD_DIR)/$(STARDICT_DICT_NAME).ifo
-
-$(BUILD_DIR)/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2: \
-       	$(stardict_prefix)$(dictname).ifo \
-	$(stardict_prefix)$(dictname).dict.dz \
-	$(stardict_prefix)$(dictname).idx.gz
-	@if [ ! -d $(BUILD_DIR)/stardict ]; then \
-		mkdir $(BUILD_DIR)/stardict; fi
-	tar -C .. -cvjf \
-	  $(BUILD_DIR)/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2 \
-	  $(addprefix $(notdir $(realpath .))/, $^)
-STRDCT_RELEASE_DIR=$(FREEDICTDIR)/release/stardict
-$(FREEDICTDIR)/release/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2: \
-       	stardict $(STARDICT_BASE)/README-format.md
-	@if [ ! -d $(STRDCT_RELEASE_DIR) ]; then \
-		mkdir $(STRDCT_RELEASE_DIR); fi
-	cd $(STARDICT_BASE) && tar cvjf freedict-$(dictname)-$(version)-stardict.tar.bz2 \
-	  $(STARDICT_DICT_NAME) README-format.md
-	mv $(STARDICT_BASE)/freedict-$(dictname)-$(version)-stardict.tar.bz2 \
-		$(STRDCT_RELEASE_DIR)
-
-release-stardict: \
-	$(BUILD_DIR)/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2
-
-
-clean::
-	rm -f $(dictname).idxhead \
-		$(BUILD_DIR)/stardict/freedict-$(dictname)-$(version)-stardict.tar.bz2
-	rm -rf $(STARDICT_BASE)
-
 #####################
 #### targets for ding
 #####################
@@ -436,6 +370,5 @@ endif
 	release-rpm release-rpm-reverse release-rpm-freedict-tools \
 	clean dist validation query-% print-unsupported \
 	test test-reverse test-reverse-oldstyle tests \
-	find-homographs pos-statistics \
-	stardict release-stardict release-tei-tbz2
+	find-homographs pos-statistics release-tei-tbz2
 

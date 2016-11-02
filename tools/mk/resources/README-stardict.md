@@ -1,7 +1,10 @@
 This dictionary is in the stardict format. This format is developed by the
-StarDict project, <http://www.stardict.org/>. It can be used by various program
+StarDict project, <http://www.stardict.org/>. It can be used by various programs
 (see first link above for a graphical client). A command-line client called sdcv
 is available at <http://sdcv.sourceforge.net/>.
 
 If you are using Debian/Ubuntu, you might want to install the graphical client
 via `apt install qstardict` or the command-line client via `apt-get install sdcv`.
+
+Alternatively, there is also GoldenDict, which offers a modern design and much
+more search options.
