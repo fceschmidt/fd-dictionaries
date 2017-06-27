@@ -10624,15 +10624,30 @@
             <form>
                <orth>deltage</orth>
             </form>
+            <gramGrp>
+                <pos>v</pos>
+                <colloc>i</colloc>
+            </gramGrp>
             <sense>
                <cit type="trans">
                   <quote>participate</quote>
+                  <gramGrp>
+                      <pos>v</pos>
+                      <colloc>in</colloc>
+                  </gramGrp>
                </cit>
                <cit type="trans">
-                  <quote>share</quote>
+                  <quote>take part</quote>
+                  <gramGrp>
+                      <pos>v</pos>
+                      <colloc>in</colloc>
+                  </gramGrp>
                </cit>
-               <cit type="trans">
-                  <quote>takepart</quote>
+               <cit type="example">
+                   <quote>Vi deltager i konkurrencen.</quote>
+                   <cit type="translation">
+                       <quote>We take part in the competition.</quote>
+                   </cit>
                </cit>
             </sense>
          </entry>
