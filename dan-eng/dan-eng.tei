@@ -18534,6 +18534,23 @@
          </entry>
          <entry>
             <form>
+               <orth>gevaldig</orth>
+               <usg type="register">informal</usg>
+            </form>
+            <gramGrp>
+                <pos>adj</pos>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>tremendous</quote>
+                  <gramGrp>
+                      <pos>adj</pos>
+                  </gramGrp>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
                <orth>gevær</orth>
             </form>
             <sense>
@@ -21467,6 +21484,31 @@
                   <quote>lettuce</quote>
                </cit>
             </sense>
+         </entry>
+         <entry>
+             <form>
+                 <orth>hovedværk</orth>
+             </form>
+             <gramGrp>
+                 <pos>n</pos>
+                 <gen>neuter</gen>
+             </gramGrp>
+             <sense>
+                <cit type="trans">
+                   <quote>main work</quote>
+                   <usg type="hint">of art</usg>
+                   <gramGrp>
+                       <pos>n</pos>
+                   </gramGrp>
+                </cit>
+                <cit type="trans">
+                   <quote>magnum opus</quote>
+                   <usg type="register">formal</usg>
+                   <gramGrp>
+                       <pos>n</pos>
+                   </gramGrp>
+                </cit>
+             </sense>
          </entry>
          <entry>
             <form>
