@@ -1454,6 +1454,35 @@
          </entry>
          <entry>
             <form>
+               <orth>adspørge</orth>
+            </form>
+            <gramGrp>
+               <pos>v</pos>
+               <colloc>om</colloc>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>consult</quote>
+                  <gramGrp>
+                     <colloc>about</colloc>
+                  </gramGrp>
+               </cit>
+               <cit type="trans">
+                  <quote>poll</quote>
+                  <gramGrp>
+                     <colloc>about, on</colloc>
+                  </gramGrp>
+               </cit>
+               <cit type="trans">
+                  <quote>ask</quote>
+                  <gramGrp>
+                     <colloc>about</colloc>
+                  </gramGrp>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
                <orth>advare</orth>
             </form>
             <sense>
@@ -19342,6 +19371,28 @@
                </cit>
                <cit type="trans">
                   <quote>limit</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>grænseoverskridende</orth>
+            </form>
+            <gramGrp>
+               <pos>adj</pos>
+            </gramGrp>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>cross-border</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>transnational</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <usg type="style">figurative</usg>
+               <cit type="trans">
+                  <quote>taboo-breaking</quote>
                </cit>
             </sense>
          </entry>
@@ -41354,6 +41405,21 @@
          </entry>
          <entry>
             <form>
+               <orth>slutrunde</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>common</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>final</quote>
+                  <usg type="hint">of a tournament</usg>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
                <orth>slutte</orth>
             </form>
             <sense n="1">
@@ -47363,6 +47429,19 @@
             </sense>
          </entry>
          <entry>
+             <form>
+                 <orth>travl</orth>
+             </form>
+             <gramGrp>
+                 <pos>adj</pos>
+             </gramGrp>
+             <sense>
+                 <cit type="trans">
+                     <quote>busy</quote>
+                 </cit>
+             </sense>
+         </entry>
+         <entry>
             <form>
                <orth>tre</orth>
             </form>
@@ -51937,6 +52016,22 @@
             <sense>
                <cit type="trans">
                   <quote>yacht</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>ydmyge</orth>
+            </form>
+            <gramGrp>
+               <pos>v</pos>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>humiliate</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>humble</quote>
                </cit>
             </sense>
          </entry>
