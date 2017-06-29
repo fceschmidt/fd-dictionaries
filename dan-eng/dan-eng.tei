@@ -16852,6 +16852,24 @@
          </entry>
          <entry>
             <form>
+               <orth>foto</orth>
+            </form>
+            <gramGrp>
+                <pos>n</pos>
+                <gen>neuter</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>photo</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>photograph</quote>
+               </cit>
+               <xr type="syn"><ref target="#fotografi">fotografi</ref></xr>
+            </sense>
+         </entry>
+         <entry>
+            <form>
                <orth>fotograf</orth>
             </form>
             <sense n="1">
