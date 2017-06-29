@@ -39833,7 +39833,10 @@
             <form>
                <orth>sindssyg</orth>
             </form>
-            <sense>
+            <gramGrp>
+                <pos>adj</pos>
+            </gramGrp>
+            <sense n="1">
                <cit type="trans">
                   <quote>crazy</quote>
                </cit>
@@ -39846,7 +39849,12 @@
                <cit type="trans">
                   <quote>nuts</quote>
                </cit>
-            </sense>
+           </sense>
+           <sense n="2">
+               <cit type="trans">
+                  <quote>mentally ill</quote>
+              </cit>
+           </sense>
          </entry>
          <entry>
             <form>
@@ -40452,6 +40460,20 @@
             <sense>
                <cit type="trans">
                   <quote>garbagecan</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>skribent</orth>
+            </form>
+            <gramGrp>
+                <pos>n</pos>
+                <gen>common</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>writer</quote>
                </cit>
             </sense>
          </entry>
