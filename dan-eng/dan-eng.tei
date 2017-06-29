@@ -10632,14 +10632,12 @@
                <cit type="trans">
                   <quote>participate</quote>
                   <gramGrp>
-                      <pos>v</pos>
                       <colloc>in</colloc>
                   </gramGrp>
                </cit>
                <cit type="trans">
                   <quote>take part</quote>
                   <gramGrp>
-                      <pos>v</pos>
                       <colloc>in</colloc>
                   </gramGrp>
                </cit>
@@ -16861,15 +16859,9 @@
             <sense>
                <cit type="trans">
                   <quote>photo</quote>
-                  <gramGrp>
-                      <pos>n</pos>
-                  </gramGrp>
                </cit>
                <cit type="trans">
                   <quote>photograph</quote>
-                  <gramGrp>
-                      <pos>n</pos>
-                  </gramGrp>
                </cit>
                <xr type="syn"><ref target="#fotografi">fotografi</ref></xr>
             </sense>
@@ -18543,9 +18535,6 @@
             <sense>
                <cit type="trans">
                   <quote>tremendous</quote>
-                  <gramGrp>
-                      <pos>adj</pos>
-                  </gramGrp>
                </cit>
             </sense>
          </entry>
@@ -21497,16 +21486,10 @@
                 <cit type="trans">
                    <quote>main work</quote>
                    <usg type="hint">of art</usg>
-                   <gramGrp>
-                       <pos>n</pos>
-                   </gramGrp>
                 </cit>
                 <cit type="trans">
                    <quote>magnum opus</quote>
                    <usg type="register">formal</usg>
-                   <gramGrp>
-                       <pos>n</pos>
-                   </gramGrp>
                 </cit>
              </sense>
          </entry>
