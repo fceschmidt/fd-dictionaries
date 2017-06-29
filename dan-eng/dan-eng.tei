@@ -16861,9 +16861,15 @@
             <sense>
                <cit type="trans">
                   <quote>photo</quote>
+                  <gramGrp>
+                      <pos>n</pos>
+                  </gramGrp>
                </cit>
                <cit type="trans">
                   <quote>photograph</quote>
+                  <gramGrp>
+                      <pos>n</pos>
+                  </gramGrp>
                </cit>
                <xr type="syn"><ref target="#fotografi">fotografi</ref></xr>
             </sense>
