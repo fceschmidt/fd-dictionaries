@@ -3342,15 +3342,54 @@
             <form>
                <orth>alt</orth>
             </form>
-            <sense>
+            <sense n="1">
+               <gramGrp>
+                  <pos>pron</pos>
+               </gramGrp>
                <cit type="trans">
                   <quote>all</quote>
                </cit>
                <cit type="trans">
-                  <quote>altogehter</quote>
+                  <quote>everything</quote>
+               </cit>
+            </sense>
+            <sense n="2">
+               <gramGrp>
+                  <pos>adv</pos>
+               </gramGrp>
+               <usg type="hint">intensifier</usg>
+               <cit type="trans">
+                  <quote>all</quote>
                </cit>
                <cit type="trans">
-                  <quote>everything</quote>
+                  <quote>completely</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>altogether</quote>
+               </cit>
+            </sense>
+            <sense n="3">
+               <gramGrp>
+                  <pos>n</pos>
+                  <gen>neuter</gen>
+               </gramGrp>
+               <cit type="trans">
+                  <quote>universe</quote>
+               </cit>
+            </sense>
+            <sense n="4">
+               <gramGrp>
+                  <pos>n</pos>
+                  <gen>common</gen>
+               </gramGrp>
+               <usg type="hint">music</usg>
+               <cit type="trans">
+                  <quote>alto</quote>
+                  <usg type="hint">choir</usg>
+               </cit>
+               <cit type="trans">
+                  <quote>contralto</quote>
+                  <usg type="hint">opera</usg>
                </cit>
             </sense>
          </entry>
