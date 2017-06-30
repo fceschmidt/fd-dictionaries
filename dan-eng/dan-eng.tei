@@ -3357,7 +3357,7 @@
                <gramGrp>
                   <pos>adv</pos>
                </gramGrp>
-               <usg type="hint">intensifier</usg>
+               <usg type="hint">intensifier, esp. in set phrases</usg>
                <cit type="trans">
                   <quote>all</quote>
                </cit>
@@ -3367,17 +3367,10 @@
                <cit type="trans">
                   <quote>altogether</quote>
                </cit>
+               <xr type="cf"><ref target="#alt efter">alt efter</ref></xr>
+               <xr type="cf"><ref target="#alt imens">alt imens</ref></xr>
             </sense>
             <sense n="3">
-               <gramGrp>
-                  <pos>n</pos>
-                  <gen>neuter</gen>
-               </gramGrp>
-               <cit type="trans">
-                  <quote>universe</quote>
-               </cit>
-            </sense>
-            <sense n="4">
                <gramGrp>
                   <pos>n</pos>
                   <gen>common</gen>
@@ -3391,7 +3384,29 @@
                   <quote>contralto</quote>
                   <usg type="hint">opera</usg>
                </cit>
+               <cit type="example">
+                  <quote>Alt er den dybeste pige-, kvinde- eller drengestemme.</quote>
+                  <cit type="trans">
+                     <quote>Alto is the lowest girls', women's, or boys' voice type.</quote>
+                  </cit>
+               </cit>
             </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>alt efter</orth>
+            </form>
+            <sense>
+               <cit type="trans">
+                  <quote>depending on</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>alt imens</orth>
+            </form>
+            <xr type="syn"><ref target="#imens">imens</ref></xr>
          </entry>
          <entry>
             <form>
