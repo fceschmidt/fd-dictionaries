@@ -2901,6 +2901,20 @@
          </entry>
          <entry>
             <form>
+               <orth>aktiemarked</orth>
+            </form>
+            <gramGrp>
+                <pos>n</pos>
+                <gen>common</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>stock market</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
                <orth>aktiv</orth>
             </form>
             <sense n="1">
@@ -2968,6 +2982,21 @@
                </cit>
             </sense>
          </entry>
+         <entry>
+            <form>
+               <orth>aktør</orth>
+            </form>
+            <gramGrp>
+                <pos>n</pos>
+                <gen>common</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>actor</quote>
+               </cit>
+            </sense>
+         </entry>
+
          <entry>
             <form>
                <orth>akvarel</orth>
@@ -5510,6 +5539,10 @@
             <form>
                <orth>banan</orth>
             </form>
+            <gramGrp>
+                <pos>n</pos>
+                <gen>common</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
                   <quote>banana</quote>
@@ -27085,6 +27118,10 @@
             <form>
                <orth>kyst</orth>
             </form>
+            <gramGrp>
+                <pos>n</pos>
+                <gen>common</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
                   <quote>coast</quote>
