@@ -5601,6 +5601,20 @@
          </entry>
          <entry>
             <form>
+               <orth>Bangkok</orth>
+            </form>
+            <gramGrp>
+                <pos>n</pos>
+                <gen>proper</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>Bangkok</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
                <orth>bange</orth>
             </form>
             <sense n="1">
@@ -24975,6 +24989,20 @@
          </entry>
          <entry>
             <form>
+               <orth>keramik</orth>
+            </form>
+            <gramGrp>
+                <pos>n</pos>
+                <gen>common</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>ceramic</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
                <orth>kerne</orth>
             </form>
             <sense>
@@ -29720,6 +29748,30 @@
             <sense>
                <cit type="trans">
                   <quote>crew</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>mane</orth>
+            </form>
+            <gramGrp>
+                <pos>v</pos>
+            </gramGrp>
+            <sense n="1">
+               <gramGrp>
+                   <colloc>til</colloc>
+               </gramGrp>
+               <cit type="trans">
+                   <quote>exhort</quote>
+                   <gramGrp>
+                      <colloc>to</colloc>
+                   </gramGrp>
+               </cit>
+            </sense>
+            <sense n="1">
+               <cit type="trans">
+                  <quote>conjure</quote>
                </cit>
             </sense>
          </entry>
