@@ -13168,6 +13168,20 @@
          </entry>
          <entry>
             <form>
+               <orth>enzym</orth>
+            </form>
+            <gramGrp>
+                <pos>n</pos>
+                <gen>neuter</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>enzyme</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
                <orth>epoke</orth>
             </form>
             <sense>
@@ -13436,6 +13450,10 @@
             <form>
                <orth>fader</orth>
             </form>
+            <gramGrp>
+                <pos>n</pos>
+                <gen>common</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
                   <quote>father</quote>
@@ -27705,6 +27723,10 @@
             <form>
                <orth>landsby</orth>
             </form>
+            <gramGrp>
+                <pos>n</pos>
+                <gen>common</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
                   <quote>village</quote>
@@ -39508,6 +39530,20 @@
          </entry>
          <entry>
             <form>
+               <orth>seminar</orth>
+            </form>
+            <gramGrp>
+                <pos>n</pos>
+                <gen>neuter</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>seminar</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
                <orth>sen</orth>
             </form>
             <sense>
@@ -49211,6 +49247,22 @@
             <sense>
                <cit type="trans">
                   <quote>appeal</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>udrydde</orth>
+            </form>
+            <gramGrp>
+                <pos>v</pos>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>exterminate</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>eradicate</quote>
                </cit>
             </sense>
          </entry>
