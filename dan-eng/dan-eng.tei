@@ -3921,6 +3921,20 @@
          </entry>
          <entry>
             <form>
+               <orth>anholdelse</orth>
+            </form>
+            <gramGrp>
+                <pos>n</pos>
+                <gen>common</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>arrest</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
                <orth>ankel</orth>
             </form>
             <sense>
@@ -16395,6 +16409,19 @@
          </entry>
          <entry>
             <form>
+               <orth>forretningsmæssig</orth>
+            </form>
+            <gramGrp>
+               <pos>adj</pos>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>commercial</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
                <orth>forsamles</orth>
             </form>
             <sense>
@@ -20717,6 +20744,20 @@
          </entry>
          <entry>
             <form>
+               <orth>helikopter</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>common</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>helicopter</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
                <orth>hellere</orth>
             </form>
             <sense n="1">
@@ -21464,6 +21505,22 @@
                <cit type="trans">
                   <quote>Dutchman</quote>
                </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>homoseksuel</orth>
+            </form>
+            <gramGrp>
+               <pos>adj</pos>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>homosexual</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>gay</quote>
+              </cit>
             </sense>
          </entry>
          <entry>
@@ -26902,6 +26959,20 @@
          </entry>
          <entry>
             <form>
+               <orth>kunstart</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>common</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>art form</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
                <orth>kunstig</orth>
             </form>
             <sense>
@@ -29503,6 +29574,20 @@
                <cit type="trans">
                   <quote>let</quote>
                </cit>
+               <cit type="trans">
+                  <quote>release</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>løsladelse</orth>
+            </form>
+            <gramGrp>
+                <pos>n</pos>
+                <gen>common</gen>
+            </gramGrp>
+            <sense>
                <cit type="trans">
                   <quote>release</quote>
                </cit>
@@ -41982,6 +42067,9 @@
             <form>
                <orth>snart</orth>
             </form>
+            <gramGrp>
+                <pos>adv</pos>
+            </gramGrp>
             <sense>
                <cit type="trans">
                   <quote>soon</quote>
@@ -51623,6 +51711,19 @@
                </cit>
                <cit type="trans">
                   <quote>cross</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>vride</orth>
+            </form>
+            <gramGrp>
+               <pos>v</pos>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>wring</quote>
                </cit>
             </sense>
          </entry>
