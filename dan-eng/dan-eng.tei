@@ -8304,6 +8304,20 @@
             </sense>
          </entry>
          <entry>
+             <form>
+                 <orth>blues</orth>
+             </form>
+             <gramGrp>
+                 <pos>n</pos>
+                 <gen>common</gen>
+             </gramGrp>
+             <sense>
+                 <cit type="trans">
+                     <quote>blues</quote>
+                 </cit>
+             </sense>
+         </entry>
+         <entry>
             <form>
                <orth>bluse</orth>
             </form>
@@ -13682,6 +13696,10 @@
             <form>
                <orth>fangst</orth>
             </form>
+            <gramGrp>
+                <pos>n</pos>
+                <gen>common</gen>
+            </gramGrp>
             <sense>
                <cit type="trans">
                   <quote>catch</quote>
@@ -15677,6 +15695,22 @@
             </sense>
          </entry>
          <entry>
+             <form>
+                 <orth>foreslå</orth>
+             </form>
+             <gramGrp>
+                 <pos>v</pos>
+             </gramGrp>
+             <sense>
+                 <cit type="trans">
+                     <quote>propose</quote>
+                 </cit>
+                 <cit type="trans">
+                     <quote>suggest</quote>
+                 </cit>
+             </sense>
+         </entry>
+         <entry>
             <form>
                <orth>forestille</orth>
             </form>
@@ -16177,6 +16211,20 @@
                </cit>
                <cit type="trans">
                   <quote>shape</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>format</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>neuter</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>format</quote>
                </cit>
             </sense>
          </entry>
@@ -18565,6 +18613,19 @@
                   <quote>mean</quote>
                </cit>
             </sense>
+         </entry>
+         <entry>
+             <form>
+                 <orth>gennemtænke</orth>
+             </form>
+             <gramGrp>
+                 <pos>v</pos>
+             </gramGrp>
+             <sense>
+                 <cit type="trans">
+                     <quote>think through</quote>
+                 </cit>
+             </sense>
          </entry>
          <entry>
             <form>
@@ -21244,12 +21305,21 @@
                <orth>hjem</orth>
             </form>
             <sense n="1">
-               <cit type="trans">
+                <gramGrp>
+                    <pos>n</pos>
+                    <gen>neuter</gen>
+                </gramGrp>
+                <usg type="style">place</usg>
+                <cit type="trans">
                   <quote>home</quote>
                </cit>
             </sense>
             <sense n="2">
-               <cit type="trans">
+                <gramGrp>
+                    <pos>adv</pos>
+                </gramGrp>
+                <usg type="style">direction of movement</usg>
+                <cit type="trans">
                   <quote>home</quote>
                </cit>
             </sense>
@@ -21258,9 +21328,12 @@
             <form>
                <orth>hjemme</orth>
             </form>
+            <gramGrp>
+                <pos>adv</pos>
+            </gramGrp>
             <sense>
                <cit type="trans">
-                  <quote>athome</quote>
+                  <quote>at home</quote>
                </cit>
             </sense>
          </entry>
@@ -22722,6 +22795,9 @@
             <form>
                <orth>ideal</orth>
             </form>
+            <gramGrp>
+               <pos>adj</pos>
+            </gramGrp>
             <sense>
                <cit type="trans">
                   <quote>ideal</quote>
@@ -23600,6 +23676,20 @@
                   <quote>international</quote>
                </cit>
             </sense>
+         </entry>
+         <entry>
+             <form>
+                 <orth>intervention</orth>
+             </form>
+             <gramGrp>
+                 <pos>n</pos>
+                 <gen>common</gen>
+             </gramGrp>
+             <sense>
+                 <cit type="trans">
+                     <quote>intervention</quote>
+                 </cit>
+             </sense>
          </entry>
          <entry>
             <form>
@@ -27008,6 +27098,10 @@
             <form>
                <orth>kursus</orth>
             </form>
+            <gramGrp>
+                <pos>n</pos>
+                <pos>common</pos>
+            </gramGrp>
             <sense>
                <cit type="trans">
                   <quote>class</quote>
@@ -28169,30 +28263,35 @@
             </sense>
          </entry>
          <entry>
-            <form>
-               <orth>leje</orth>
-            </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>hire</quote>
-               </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>hire</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>rent</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>rental</quote>
-               </cit>
-            </sense>
-            <sense n="3">
-               <cit type="trans">
-                  <quote>rent</quote>
-               </cit>
-            </sense>
+             <form>
+                 <orth>leje</orth>
+             </form>
+             <sense n="1">
+                 <gramGrp>
+                     <pos>v</pos>
+                 </gramGrp>
+                 <cit type="trans">
+                     <quote>hire</quote>
+                 </cit>
+                 <cit type="trans">
+                     <quote>rent</quote>
+                 </cit>
+             </sense>
+             <sense n="2">
+                 <gramGrp>
+                     <pos>n</pos>
+                     <pos>neuter</pos>
+                 </gramGrp>
+                 <cit type="trans">
+                     <quote>hire</quote>
+                 </cit>
+                 <cit type="trans">
+                     <quote>rent</quote>
+                 </cit>
+                 <cit type="trans">
+                     <quote>rental</quote>
+                 </cit>
+             </sense>
          </entry>
          <entry>
             <form>
@@ -30211,6 +30310,20 @@
             </sense>
          </entry>
          <entry>
+             <form>
+                 <orth>medborger</orth>
+             </form>
+             <gramGrp>
+                 <pos>n</pos>
+                 <pos>common</pos>
+             </gramGrp>
+             <sense>
+                 <cit type="trans">
+                     <quote>fellow citizen</quote>
+                 </cit>
+             </sense>
+         </entry>
+         <entry>
             <form>
                <orth>meddele</orth>
             </form>
@@ -31982,28 +32095,38 @@
             </sense>
          </entry>
          <entry>
-            <form>
-               <orth>møde</orth>
-            </form>
-            <sense n="1">
-               <cit type="trans">
-                  <quote>comeacross</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>encounter</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>meet</quote>
-               </cit>
-               <cit type="trans">
-                  <quote>see</quote>
-               </cit>
-            </sense>
-            <sense n="2">
-               <cit type="trans">
-                  <quote>encounter</quote>
-               </cit>
-            </sense>
+             <form>
+                 <orth>møde</orth>
+             </form>
+             <sense n="1">
+                 <gramGrp>
+                     <pos>v</pos>
+                 </gramGrp>
+                 <cit type="trans">
+                     <quote>meet</quote>
+                 </cit>
+                 <cit type="trans">
+                     <quote>see</quote>
+                 </cit>
+                 <cit type="trans">
+                     <quote>come across</quote>
+                 </cit>
+                 <cit type="trans">
+                     <quote>encounter</quote>
+                 </cit>
+             </sense>
+             <sense n="2">
+                 <gramGrp>
+                     <pos>n</pos>
+                     <gen>neuter</gen>
+                 </gramGrp>
+                 <cit type="trans">
+                     <quote>encounter</quote>
+                 </cit>
+                 <cit type="trans">
+                     <quote>meet-up</quote>
+                 </cit>
+             </sense>
          </entry>
          <entry>
             <form>
@@ -32297,6 +32420,25 @@
             <sense>
                <cit type="trans">
                   <quote>Dutch</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
+               <orth>nedtone</orth>
+            </form>
+            <gramGrp>
+               <pos>v</pos>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>downplay</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>play down</quote>
+               </cit>
+               <cit type="trans">
+                  <quote>tone down</quote>
                </cit>
             </sense>
          </entry>
@@ -42607,6 +42749,20 @@
          </entry>
          <entry>
             <form>
+               <orth>spildevand</orth>
+            </form>
+            <gramGrp>
+               <pos>n</pos>
+               <gen>neuter</gen>
+            </gramGrp>
+            <sense>
+               <cit type="trans">
+                  <quote>wastewater</quote>
+               </cit>
+            </sense>
+         </entry>
+         <entry>
+            <form>
                <orth>spille</orth>
             </form>
             <sense>
@@ -43099,6 +43255,21 @@
                </cit>
             </sense>
          </entry>
+         <entry>
+             <form>
+                 <orth>steg</orth>
+             </form>
+             <gramGrp>
+                 <pos>n</pos>
+                 <gen>common</gen>
+             </gramGrp>
+             <sense>
+                 <usg type="hint">meat</usg>
+                 <cit type="trans">
+                     <quote>roast</quote>
+                 </cit>
+             </sense>
+        </entry>
          <entry>
             <form>
                <orth>stege</orth>
